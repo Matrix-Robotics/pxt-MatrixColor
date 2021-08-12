@@ -1,0 +1,9 @@
+{
+  "MxColor.init|block": "start up the color sensor|gamma correnction is %gamma|fill-light is %light and set in mode:%lmode",
+  "MxColor.readColorNumber|block": "read color string from sensor",
+  "MxColor.readColor|block": "read |%color| from sensor",
+  "MxColor.readGrayscale|block": "read grayscale from sensor",
+  "MxColor.setLight|block": "set fill light brightness at pwm |%pwm|",
+  "MxColor|block": "MxColor",
+  "{id:category}MxColor": "MxColor"
+}
