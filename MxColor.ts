@@ -1,7 +1,13 @@
-enum ColorLight
+enum ColorLightMode
 {
     PWM = 0,
     AUTO
+}
+
+enum ColorLogic
+{
+    Close = 0,
+    Open
 }
 
 enum ColorType
@@ -15,7 +21,7 @@ enum ColorType
     K
 }
 
-//% weight=0 color=#0066CC icon="\uf2db" block="MxColor"
+//% weight=0 color=#000016 icon="\uf030" block="MxColor"
 namespace MxColor{
 
     const MxColor_ADDR = 0x22
@@ -42,9 +48,9 @@ namespace MxColor{
      *@param light [0-1] on/off fill light; eg: true, false
      *@param lmode [0-1] set motor speed; eg: 0, 1
     */
-    //%block="gamma |%gamma|, light |%light|, lmode |%lmode|"
-    //%weight=994 %blockID="MxColor_init"
-    export function init(gamma: boolean, light: boolean, lmode: ColorLight): void {
+    //%block="start up the color sensor|gamma correnction is %gamma|fill-light is %light and set in mode:%lmode"
+    //%weight=994 inlineInputMode="external" %blockID="MxColor_init"
+    export function init(gamma: ColorLogic, light: ColorLogic, lmode: ColorLightMode): void {
         let setting = 0x08
         setting = (gamma) ? setting + 4 : setting
         setting = (light) ? setting + 2 : setting
@@ -61,7 +67,7 @@ namespace MxColor{
      *set fill light brightness
      *@param pwm [0-255] set motor speed; eg: 0, 90
     */
-    //%block="set fill light brightness at |%pwm|"
+    //%block="set fill light brightness at pwm |%pwm|"
     //%weight=993 %blockID="MxColor_light"
     //% pwm.min=0 pwm.max=255
     export function setLight(pwm: number): void {
