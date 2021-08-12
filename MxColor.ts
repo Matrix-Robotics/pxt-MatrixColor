@@ -94,7 +94,7 @@ namespace MxColor{
     /**
      *read color string from sensor
     */
-    //%block="read color number from sensor"
+    //%block="read color string from sensor"
     //%weight=94 %blockID="MxColor_number"
     export function readColorNumber(): string {
         let num = i2cRead(ColorReg.Device_NUM_COLOR)
