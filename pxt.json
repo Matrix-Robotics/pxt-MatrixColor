@@ -1,0 +1,21 @@
+{
+    "name": "MatrixColor",
+    "version": "1.0.0",
+    "description": "The extension for MATRIX Color Sensor",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "MxColor.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true,
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj"
+}
