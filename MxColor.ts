@@ -168,13 +168,25 @@ namespace MxColor{
     }
 
     /**
+     * Checks the color is being detected
+     * @param color the color to detect
+     */
+    //% block="is **color sensor** |detected|%color=colorPicker"
+    //% blockId=colorisColorDetectedDetected
+    //% blockNamespace=MxColor
+    //% weight=99
+    export function isColorDetected(color: number) {
+        return this.readColorNumber() == color;
+    }
+
+
+    /**
      * Returns a color that the sensor can detect
      * @param color the color sensed by the sensor, eg: 8388863  //Violet
      */
     //% shim=TD_ID
     //% blockId=colorSensorColor
     //% block="color %color=colorPicker"
-    //% group="Color Sensor"
     //% weight=971
     export function color(color: number): number {
         return color;
