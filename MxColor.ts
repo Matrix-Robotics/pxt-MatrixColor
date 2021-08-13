@@ -151,7 +151,7 @@ namespace MxColor{
             default:
                 break
         }
-        return name
+        return cmykDec
     }
 
     /**
