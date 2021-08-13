@@ -156,7 +156,7 @@ namespace MxColor{
 
     /**
      * A color enum picker
-     * @param color to use, eg: ColorSensorColor.Blue
+     * @param color to use, converted to dec, eg: 8388863  //Violet
      */
     //% blockId=colorPicker block="%color" shim=TD_ID
     //% weight=0 blockHidden=1 turnRatio.fieldOptions.decompileLiterals=1
@@ -169,13 +169,13 @@ namespace MxColor{
 
     /**
      * Returns a color that the sensor can detect
-     * @param color the color sensed by the sensor, eg: ColorSensorColor.Red
+     * @param color the color sensed by the sensor, eg: 8388863  //Violet
      */
     //% shim=TD_ID
-    //% blockId=colorSensorColor block="color %color=colorPicker"
+    //% blockId=colorSensorColor
+    //% block="color %color=colorPicker"
     //% group="Color Sensor"
-    //% weight=97
-    //% help=test/color
+    //% weight=971
     export function color(color: number): number {
         return color;
     }
