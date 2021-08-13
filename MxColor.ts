@@ -98,60 +98,86 @@ namespace MxColor{
     }
     
     /**
-     *read color string from sensor
+     * read color string from sensor
     */
     //%block="read color string from sensor"
     //%weight=94 %blockID="MxColor_number"
-    export function readColorNumber(): string {
+    export function readColorNumber(): number {
         let num = i2cRead(ColorReg.Device_NUM_COLOR)
-        let name =""
+        let cmykDec = 0
         switch(num){
             case 0:
-                name = "Black"
+                cmykDec = 0        //black
                 break
             case 1:
-                name = "White"
+                cmykDec = 16777215 //white
                 break
             case 2:
-                name = "Cyan"
+                cmykDec = 65535    //Cyan
                 break
             case 3:
-                name = "Ocean"
+                cmykDec = 33023    //Ocean
                 break
             case 4:
-                name = "Blue"
+                cmykDec = 255      //blue
                 break
             case 5:
-                name = "Violet"
+                cmykDec = 8388863  //Violet
                 break
             case 6:
-                name = "Magenta"
+                cmykDec = 16711935 //Magenta
                 break
             case 7:
-                name = "Raspberry"
+                cmykDec = 16711808 //Raspberry
                 break
             case 8:
-                name = "Red"
-            break
+                cmykDec = 16711680 //Red
+                break
             case 9:
-                name = "Orange"
+                cmykDec = 16744448 //Orange
                 break
             case 10:
-                name = "Yellow"
+                cmykDec = 16776960 //Yellow
                 break
             case 11:
-                name = "SpringGreen"
+                cmykDec = 8453888  //SpringGreen
                 break
             case 12:
-                name = "Green"
+                cmykDec = 65280    //Green
                 break
             case 13:
-                name = "Turquoise"
+                cmykDec = 65408    //Turquoise
                 break
             default:
                 break
         }
         return name
+    }
+
+    /**
+     * A color enum picker
+     * @param color to use, eg: ColorSensorColor.Blue
+     */
+    //% blockId=colorPicker block="%color" shim=TD_ID
+    //% weight=0 blockHidden=1 turnRatio.fieldOptions.decompileLiterals=1
+    //% color.fieldEditor="colornumber"
+    //% color.fieldOptions.colours='["#FF0000", "#FF8000", "#FFFF00", "#80FF00", "#00FF00", "#00FF80", "#00FFFF", "#0080FF", "#0000FF", "#8000FF", "#FF00FF", "#FF0080", "#000000", "#FFFFFF"]'
+    //% color.fieldOptions.columns=2
+    export function __colorPicker(color: number): number {
+        return color;
+    }
+
+    /**
+     * Returns a color that the sensor can detect
+     * @param color the color sensed by the sensor, eg: ColorSensorColor.Red
+     */
+    //% shim=TD_ID
+    //% blockId=colorSensorColor block="color %color=colorPicker"
+    //% group="Color Sensor"
+    //% weight=97
+    //% help=test/color
+    export function color(color: number): number {
+        return color;
     }
 
     function i2cWrite(reg: number, value: number): void {
