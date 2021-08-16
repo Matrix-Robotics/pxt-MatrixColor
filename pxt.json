@@ -9,8 +9,8 @@
     "files": [
         "README.md",
         "MxColor.ts",
-        "_locales/zh-tw/MatrixMicro-jsdoc-strings.json",
-        "_locales/zh-tw/MatrixMicro-strings.json"
+        "_locales/zh-tw/MatrixColor-jsdoc-strings.json",
+        "_locales/zh-tw/MatrixColor-strings.json"
     ],
     "testFiles": [
         "test.ts"
