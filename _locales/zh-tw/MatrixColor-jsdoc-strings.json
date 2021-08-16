@@ -1,12 +1,13 @@
 {
-  "MxColor.init": "set fill light brightness",
-  "MxColor.init|param|gamma": "[0-1] on/off gamma correction; eg: true, false",
-  "MxColor.init|param|light": "[0-1] on/off fill light; eg: true, false",
-  "MxColor.init|param|lmode": "[0-1] set motor speed; eg: 0, 1",
-  "MxColor.readColor": "read color from sensor",
-  "MxColor.readColorNumber": "read color string from sensor",
-  "MxColor.readColor|param|color": "[4-10] choose color; eg: 4, 6",
-  "MxColor.readGrayscale": "read grayscale from sensor",
-  "MxColor.setLight": "set fill light brightness",
-  "MxColor.setLight|param|pwm": "[0-255] set motor speed; eg: 0, 90"
+  "MxColor.init": "啟動顏色感測器",
+  "MxColor.init|param|gamma": "[0-1] 伽瑪補償開關",
+  "MxColor.init|param|light": "[0-1] 補光燈開關",
+  "MxColor.init|param|lmode": "[0-1] 補光燈模式",
+  "MxColor.isColorDetected": "檢查顏色是否被偵測",
+  "MxColor.isColorDetected|param|color": "被偵測的顏色",
+  "MxColor.readColor": "讀取顏色數值",
+  "MxColor.readColor|param|color": "要讀取的顏色",
+  "MxColor.readGrayscale": "讀取灰階數值",
+  "MxColor.setLight": "設定補光燈亮度",
+  "MxColor.setLight|param|pwm": "[0-255] 補光燈亮度"
 }

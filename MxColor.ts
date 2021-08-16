@@ -43,10 +43,10 @@ namespace MxColor{
     }
 
     /**
-     *set fill light brightness
+     *start up the color sensor
      *@param gamma [0-1] on/off gamma correction; eg: true, false
      *@param light [0-1] on/off fill light; eg: true, false
-     *@param lmode [0-1] set motor speed; eg: 0, 1
+     *@param lmode [0-1] fill-light Mode; eg: 0, 1
     */
     //%block="start up the color sensor|gamma correnction is %gamma|fill-light is %light and set in mode:%lmode"
     //%weight=194 inlineInputMode="external" %blockID="MxColor_init"
@@ -65,7 +65,7 @@ namespace MxColor{
 
     /**
      *set fill light brightness
-     *@param pwm [0-255] set motor speed; eg: 0, 90
+     *@param pwm [0-255] fill light brightness, eg: 0, 90
     */
     //%block="set fill light brightness at pwm |%pwm|"
     //%weight=193 %blockID="MxColor_light"
