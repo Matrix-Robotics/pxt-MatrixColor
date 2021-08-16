@@ -1,6 +1,6 @@
 {
     "name": "MatrixColor",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "The extension for MATRIX Color Sensor",
     "license": "MIT",
     "dependencies": {
